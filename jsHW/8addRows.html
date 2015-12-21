@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			tr{
+				height:22px;
+			}
+			button {
+				margin:4px;
+			}
+		</style>
+	</head>
+	<body>
+		<table style="width:30%" border = "1" id = "t1">
+		  <tr>
+		    <td>Jill</td>
+		    <td>Smith</td> 
+		    <td>50</td>
+		  </tr>
+		  <tr>
+		    <td>Eve</td>
+		    <td>Jackson</td> 
+		    <td>94</td>
+		  </tr>
+		</table>
+		
+		<button onclick = "insert()">Try</button>
+		
+		<script>
+			function insert(){
+				var table = document.getElementById("t1");
+				var row = table.insertRow();
+				var countCells = document.getElementById('t1').rows[0].cells.length;
+				for(var i = 0; i < countCells; i++) {
+					row.insertCell();
+				}
+			}
+		</script>
+	</body>
+</html>

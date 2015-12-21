@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			form{
+				border:1px solid black;
+				width:480px;;
+			}
+			label{
+				display: inline-block;
+            	width:55px;
+            	text-align: left;		
+			}
+			button{
+				margin:4px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="">
+			<fieldset>
+				<label for="convert">Convert</label>
+				<input type="text" id = "convert" />
+				<select name="first" id="first">
+					<option value="kg" selected = "selected">kg</option>
+					<option value="lb">lb</option>
+				</select>
+				<select name="second" id="second">
+					<option value="lb" selected = "selected">lb</option>
+					<option value="kg">kg</option>
+				</select>
+				<button  type ="button" onclick = "convertion()">Calculate</button>
+				<br />
+				<br />
+				<div>
+					<label for="result">Result</label>
+					<input type="text" id = "result"/>
+				</div>
+			</fieldset>
+		</form>
+		
+		<script>
+			function convertion(){
+				var val = document.getElementById("convert").value;
+				var res;
+				if (document.getElementById("first").value == "kg"){
+					res = val * 2.20462262 + " lb";
+				} else {
+					res = val / 2.20462262 + " kg";
+				}
+				console.log(res);
+				document.getElementById("result").value = res; 
+			}
+		</script>
+	</body>
+</html>

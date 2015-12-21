@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			label,input,p {
+            display: inline-block;
+            width:120px;
+            text-align: left;
+        	}
+        	p{
+        		width:auto;
+        	}
+        	
+       		div{
+            	padding: 1px;
+        	}
+		</style>
+	</head>
+	<body>
+		<form action="" id = "form">
+			<fieldset>
+				<legend>Registration Form</legend>
+				<div>
+					<label for="fullName">Full name:*</label>
+					<input name = "fullName" type="text" id = "fullName" />
+					<p id = "fName"></p>
+				</div>
+				<div>
+					<label for="birthdate">Birthdate:*</label>
+					<input name = "birthdate" type="date" id = "birthdate"/>
+					<p id = "bdate"></p>
+				</div>
+				<div>
+					<label for="country">Country:*</label>
+					<select name = "country" onchange = "other()" id = "selectC">
+						<option value=""></option>
+						<option value="Bulgaria">Bulgaria</option>
+						<option value="Serbia">Serbia</option>
+						<option value="Greece">Greece</option>
+						<option value="Macedonia">Macedonia</option>
+						<option value="Romania">Romania</option>
+						<option value="other" id = "other">other</option>
+					</select>	
+					<input type="hidden" id = "country"/>
+					<p id = "countr"></p>
+				</div>
+				<div>
+					<label for="password">Password:*</label>
+					<input type="password" id = "password" />
+					<p id = "pword"></p>
+				</div>
+				<button type="button" id = "button" onclick = "validateForm()">Submit</button>
+			</fieldset>
+		</form> 
+		
+		<script>
+			function other (){
+				if(document.getElementById("selectC").value == "other"){
+					document.getElementById("country").type = "text";
+					document.getElementById("other").selected = "selected";
+				}
+			}
+			function validateForm(){
+				var text = "This field is required!";
+				var itsOk = true;
+				var x = document.getElementById("fullName");
+				if (x.value == null | x.value == ""){
+					document.getElementById("fName").innerHTML = text;
+					x.style.background ="#ff4c4c";
+					itsOk = false;
+				}
+				var x = document.getElementById("birthdate");
+				if (x.value == null | x.value == ""){
+					document.getElementById("bdate").innerHTML = text;
+					x.style.background ="#ff4c4c";
+					itsOk = false;
+				}
+				var x = document.getElementById("selectC");
+				if (x.value == null | x.value == ""){
+					document.getElementById("countr").innerHTML = text;
+					x.style.background ="#ff4c4c"; 
+					itsOk = false;
+				} else if (x.value == "other" && (document.getElementById("country").value == null |
+					document.getElementById("country").value == "")){
+						document.getElementById("countr").innerHTML = text;
+						document.getElementById("country").style.background ="#ff4c4c";
+						itsOk = false;
+				}
+				var x = document.getElementById("password");
+				if (x.value == null | x.value == ""){
+					document.getElementById("pword").innerHTML = text;
+					x.style.background ="#ff4c4c";
+					itsOk = false;
+				}	
+				var x = document.getElementById("button");
+				if (itsOk == true){
+					x.type = "submit";
+				}
+			}
+					
+	
+		</script>
+	</body>
+</html>

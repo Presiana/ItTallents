@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			label,input {
+            display: inline-block;
+            width:120px;
+            text-align: left;
+        	}
+        	
+       		div{
+            	padding: 1px;
+        	}
+		</style>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>	
+	<body>
+		<form action="">
+			<div>
+				<label for="radius">Radius</label> <br />
+				<input type="number" id = "radius"/>
+			</div>
+			<div>
+				<label for="volume">Volume </label> <br />
+				<input type="number" id = "volume" placeholder = "0.0000"/>
+			</div>
+			<div>
+				<button onclick = "myFunction()">Calculate</button>
+			</div>
+		</form>
+		
+		<script>
+			function myFunction(){
+				var r = document.getElementById("radius").value;
+				var V = (Math.pow(r, 3) * Math.PI * 4) / 3;
+				document.getElementById("volume").value = V.toFixed(4);
+			}
+		</script>
+	</body>
+</html>

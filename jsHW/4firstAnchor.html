@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		
+		<a href="https://www.facebook.com/"></a>
+		<a href="http://zamunda.net/browse.php"></a>
+		<a href="http://moodle.ittalents.bg/login/index.php"></a>
+		
+		
+		<p id="inner"></p>
+		<button onclick = "firstAnchor()">Click Me!</button>
+		
+		<script>
+		function firstAnchor() {
+			var x = document.getElementsByTagName("a")[0];
+			document.getElementById("inner").innerHTML = x;
+		}
+		</script>
+	</body>
+</html>

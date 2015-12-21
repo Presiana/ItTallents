@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<img id="image" src="" width=50% height = 50%>
+		
+		<script>
+			function randomImg(){
+	    		var randomNumber = Math.floor(Math.random()*17) + 1;
+	    		var imgName = randomNumber + ".jpg";
+	    		document.getElementById("image").src= "images/" + imgName ;
+	 		}
+			window.onload = randomImg();
+		</script>
+	</body>
+</html>
